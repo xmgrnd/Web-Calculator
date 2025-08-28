@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(79, 79, 79)
+}
+body {
+    border: 2px solid red;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 760px;
+}
+
+.main-container {
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+    width: 420px;
+    height: 600px;
+    box-shadow: 4px 4px 0px gray;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 15px;
+
+}
+.upper-sec {
+    flex: 2;
+    border: 2px solid aqua;
+}
+
+.lower-sec {
+    flex: 5;
+    border: 2px solid blue;
+    display: flex;
+    padding: 6px;
+    flex-wrap: wrap;
+
+    font-size: 50px;
+    align-items: flex-start;
+    gap: 5%;
+    justify-content: center;
+}
+
+.btn {
+    background-color: whitesmoke;
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 3px 3px grey;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    -webkit-transition: box-shadow 0.2s ease, transform 0.2s ease;
+    -moz-transition: box-shadow 0.2s ease, transform 0.2s ease;
+    -ms-transition: box-shadow 0.2s ease, transform 0.2s ease;
+    -o-transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+
+.btn:hover{
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px gray;
+    -webkit-transform: translate(-2px, -2px);
+    -moz-transform: translate(-2px, -2px);
+    -ms-transform: translate(-2px, -2px);
+    -o-transform: translate(-2px, -2px);
+}
