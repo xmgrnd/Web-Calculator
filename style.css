@@ -32,6 +32,39 @@ body {
 .upper-sec {
     flex: 2;
     border: 2px solid aqua;
+    display: flex;
+    padding: 10px;
+}
+.display {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    flex: 1;
+    border: 1px solid grey;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    flex-direction: column;
+    padding: 5px;
+}
+.upper-display, .lower-display {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    padding: 7px;
+}
+.upper-display{
+    border: 2px solid blue;
+    align-items: flex-start;
+}
+.lower-display {
+    border: 2px solid red;
+    align-items: flex-end;
+}
+.lwr-fd, .upr-fd {
+    font-size: 30px;
+    margin: 0px;
 }
 
 .lower-sec {
@@ -103,3 +136,4 @@ body {
     width: 70px;
     height: 70px;
 }
+
