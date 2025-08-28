@@ -20,9 +20,9 @@ body {
     background-color: rgb(203, 203, 203);
     border-radius: 20px;
     width: 420px;
-    height: 600px;
-    box-shadow: 4px 4px 0px gray;
-
+    height: 650px;
+    box-shadow: 5px 5px 0px gray;
+    border: 3px solid grey;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -38,19 +38,20 @@ body {
     flex: 5;
     border: 2px solid blue;
     display: flex;
-    padding: 6px;
+    padding: 0px;
     flex-wrap: wrap;
 
     font-size: 50px;
     align-items: flex-start;
-    gap: 5%;
+    gap: 4%;
     justify-content: center;
 }
 
 .btn {
     background-color: whitesmoke;
-    width: 85px;
-    height: 85px;
+    user-select: none;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,19 +61,45 @@ body {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     box-shadow: 3px 3px grey;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-    -webkit-transition: box-shadow 0.2s ease, transform 0.2s ease;
-    -moz-transition: box-shadow 0.2s ease, transform 0.2s ease;
-    -ms-transition: box-shadow 0.2s ease, transform 0.2s ease;
-    -o-transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    -webkit-transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    -moz-transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    -ms-transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    -o-transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 
 .btn:hover{
-    transform: translate(-2px, -2px);
+    transform: translate(-1px, -1px);
     box-shadow: 5px 5px gray;
-    -webkit-transform: translate(-2px, -2px);
-    -moz-transform: translate(-2px, -2px);
-    -ms-transform: translate(-2px, -2px);
-    -o-transform: translate(-2px, -2px);
+    -webkit-transform: translate(-1px, -1px);
+    -moz-transform: translate(-1px, -1px);
+    -ms-transform: translate(-1px, -1px);
+    -o-transform: translate(-1px, -1px);
+}
+.btn:active{
+    background-color: white;
+    box-shadow: 1px 1px gray;
+    transform: translate(2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+    -o-transform: translate(2px, 2px);
+}
+
+#ce, #ac {
+    width: 152px;
+    color: white;
+    background-color: rgb(235, 77, 77);
+}
+
+#plus, #minus, #dvd, #times {
+    color: rgb(64, 64, 64);
+    background-color: rgb(252, 207, 71);
+}
+
+
+.btn-placeholder {
+    width: 70px;
+    height: 70px;
 }
