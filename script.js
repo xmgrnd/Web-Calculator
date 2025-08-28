@@ -1,8 +1,6 @@
 //regex
-const stage0 = /^$/;
-const canAddOp = /^\d+$/;
-const stage2 = /^\d+ [+\/\-x] $/;
-const canCalc = /^\d+ [+\/\-x] \d+$/;
+const canAddOp = /^-?\d+(\.\d+)?$/;
+const canCalc = /^\-?\d+(\.\d+)? [+\/\-x] \-?\d+(\.?\d+)?$/;
 //initial
 console.log("works");
 const operators = ['+','/','-','x'];
@@ -54,6 +52,7 @@ function operate() {
             throw new Error("quite unexpected");
             break;
     }
+    live = parseInt(live).toFixed(2);
     dispDown.textContent = live;
     dispUp.textContent = feed;
 }
@@ -77,25 +76,49 @@ function updateHandler(value){
     } else if ( canCalc.test(live)) {
         console.log("3 fired");
         operate();
+        updateLive(value);
     }
 }
 
-updateHandler('6');
-updateHandler('4');
-updateHandler('-');
-updateHandler('-');
-updateHandler('4');
-updateHandler('-');
-console.log(canCalc.test(live));
-console.log(live);
+
 
 //buttons
 document.querySelector("#ac").addEventListener("click", function (e) {
+    feed = "";
+    live = "";
     dispDown.textContent = "";
-    dispUp.textContent = "";
-    
+    dispUp.textContent   = "";
 });
 
-document.querySelector("#ce").addEventListener("click", function (e) {
+document.querySelector("#ce").addEventListener("click", function (e) { 
+    let temp = live.split("");
+    temp.pop();
+    if ( live.length === 0 ) {
+        feed = "";
+        dispUp.textContent = feed;
+    }
+    live = temp.join("");
+    dispDown.textContent = live;
+});
 
+document.querySelector("#one").addEventListener("click", function (e) { updateHandler('1'); });
+document.querySelector("#two").addEventListener("click", function (e) { updateHandler('2'); });
+document.querySelector("#three").addEventListener("click", function (e) { updateHandler('3'); });
+document.querySelector("#four").addEventListener("click", function (e) { updateHandler('4'); });
+document.querySelector("#five").addEventListener("click", function (e) { updateHandler('5'); });
+document.querySelector("#six").addEventListener("click", function (e) { updateHandler('6'); });
+document.querySelector("#seven").addEventListener("click", function (e) { updateHandler('7'); });
+document.querySelector("#eight").addEventListener("click", function (e) { updateHandler('8'); });
+document.querySelector("#nine").addEventListener("click", function (e) { updateHandler('9'); });
+document.querySelector("#zero").addEventListener("click", function (e) { updateHandler('0'); });
+
+document.querySelector("#plus").addEventListener("click", function (e) { updateHandler('+'); });
+document.querySelector("#minus").addEventListener("click", function (e) { updateHandler('-'); });
+document.querySelector("#dvd").addEventListener("click", function (e) { updateHandler('/'); });
+document.querySelector("#times").addEventListener("click", function (e) { updateHandler('x'); });
+
+document.querySelector("#equals").addEventListener("click", function (e) { 
+    if ( canCalc.test(live)) {
+        operate();
+    }
 });
