@@ -8,7 +8,7 @@
     color: rgb(79, 79, 79)
 }
 body {
-    background-color: white;
+    background-color: rgb(158, 236, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +59,7 @@ body {
     align-items: flex-end;
 }
 .lwr-fd, .upr-fd {
-    font-size: 30px;
+    font-size: 37px;
     margin: 0px;
 }
 
@@ -130,5 +130,55 @@ body {
 .btn-placeholder {
     width: 70px;
     height: 70px;
+}
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+
+    background-color: rgb(48, 148, 255);
+}
+
+.footer img {
+    height: 40px;
+    transition: height 0.15s ease;
+    -webkit-transition: height 0.15s ease;
+    -moz-transition: height 0.15s ease;
+    -ms-transition: height 0.15s ease;
+    -o-transition: height 0.15s ease;
+}
+.footer img:hover {
+    height: 45px;
+}
+
+.footer p {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.footer p:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    -moz-text-decoration-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.color-palette-info {
+    position: fixed;
+    left: 0;
+    padding: 50px;
+    color: rgb(141, 209, 226);;
 }
 

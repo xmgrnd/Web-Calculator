@@ -2,19 +2,12 @@
 const canAddOp = /^-?\d+(\.\d+)?$/;
 const canCalc = /^\-?\d+(\.\d+)? [+\/\-x] \-?\d+(\.?\d+)?$/;
 //initial
-console.log("works");
+console.log("start");
 const operators = ['+','/','-','x'];
 const numbers = ['1','2','3','4','5','6','7','8','9','0'];
 const dispUp  = document.querySelector(".upr-fd");
 const dispDown  = document.querySelector(".lwr-fd");
 
-let isFirstProvided     = false;
-let isSecondProvided    = false;
-let isOperatorProvided  = false;
-
-let numFrst;
-let numScnd;
-let opr;
 let feed = "";
 let live = "";
 
@@ -70,7 +63,7 @@ function updateHandler(value){
     if (numbers.includes(value)) {
         console.log("1 fired");
         updateLive(value);
-    } else if ( canAddOp.test(live) ) {
+    } else if ( operators.includes(value) && canAddOp.test(live) ) {
         console.log("2 fired");
         updateLive(value);
     } else if ( canCalc.test(live)) {
@@ -117,7 +110,8 @@ document.querySelector("#minus").addEventListener("click", function (e) { update
 document.querySelector("#dvd").addEventListener("click", function (e) { updateHandler('/'); });
 document.querySelector("#times").addEventListener("click", function (e) { updateHandler('x'); });
 
-document.querySelector("#equals").addEventListener("click", function (e) { 
+
+document.querySelector("#equals").addEventListener("click", function (e) {
     if ( canCalc.test(live)) {
         operate();
     }
